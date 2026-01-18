@@ -1,158 +1,117 @@
-# 🛡️ FinClarify | Access.AI Hackathon
-### **The Agentic Guardian for Inclusive Banking**
+# FinClarify | Autonomous Financial Safeguard Platform for Inclusive Banking
 
-> **Where Artificial Intelligence meets Zero-Trust Financial Safety.**  
-> *A submission for the TCS Access.AI Hackathon*
-
----
-
-## 📖 Overview
-
-**FinClarify** is an AI-powered "Guardian Middleware" designed to make banking safe and accessible for Persons with Disabilities (PwDs).
-
-Current banking apps operate on a "frictionless" model, assuming users have perfect memory, vision, and impulse control. For neurodiverse users, the elderly, or those with cognitive impairments, this design philosophy can lead to duplicates payments, accidental overdrafts, and financial vulnerability.
-
-**FinClarify solves this by:**
-1.  **Intercepting** every transaction in real-time.
-2.  **Analyzing** intent and safety using a **Multi-Agent AI Swarm**.
-3.  **Enforcing** physical guardrails (removing buttons) when critical risks are detected.
-4.  **Adapting** the UI via Generative AI to match the user's specific disability (Plain English, Audio, or High-Contrast visuals).
+> **Category:** ACCESS.AI: AI for Accessibility & Inclusion  
+> **Status:** Production-Ready MVP  
+> **Core Concept:** Zero-Trust Agentic Middleware for Inclusive Finance
 
 ---
 
-## ✨ Key Features
+## 📖 Executive Summary
 
-*   **🧠 Multi-Agent Logic:** Uses **LangGraph** to separate concerns. An *Investigator Agent* detects math/history facts, while an *Empathy Agent* generates the UI.
-*   **🔒 Zero-Trust Guardrails:** Hard-coded protection against **Zero Balance** draining and **Duplicate Transactions**.
-*   **🔊 Multi-Modal Output:** Auto-playing audio instructions (TTS), Lottie Animations, and dynamic Waterfall Charts to visualize math.
-*   **👥 5 Distinct Personas:** Custom rules engines for Memory Impairment (Alzheimer's), ADHD (Impulse Control), Dyslexia, Visual, and Hearing impairments.
-*   **🏗️ Enterprise Simulation:** A full-stack architecture featuring a **FastAPI Banking Core** and a **Streamlit Client Portal**.
+**FinClarify** is an AI-powered financial middleware designed to transform banking from a transactional utility into an empathetic, active guardian for Persons with Disabilities (PwDs).
 
----
+Standard digital banking focuses on "frictionless" speed, which can be hazardous for users with cognitive, memory, or impulse control impairments. FinClarify introduces **Agentic Guardianship**: a zero-trust architecture that actively analyzes transaction intent, verifies safety rules in real-time, and intervenes to prevent duplicate payments, unintended overdrafts, and impulse spending.
 
-## 🛠️ Tech Stack
-
-*   **Architecture:** Client-Server (REST API).
-*   **Frontend:** Python Streamlit, Plotly, Streamlit-Lottie.
-*   **Backend (Banking Core):** FastAPI, Uvicorn, Pydantic.
-*   **AI Orchestration:** LangChain, LangGraph.
-*   **LLM Inference:** Groq API (Llama-3 / GPT-OSS).
-*   **Accessibility Tools:** gTTS (Google Text-to-Speech), WCAG color standards.
+This solution does not merely "read" the screen; it understands the risk and has the agency to block financial harm before it hits the ledger.
 
 ---
 
-## 📂 Project Structure
+## 🏛️ System Architecture
 
-```text
-finclarify/
-├── agents.py           # The AI Brain (LangGraph Multi-Agent implementation)
-├── client.py           # The Frontend (Streamlit FinClarify Portal)
-├── server.py           # The Backend (FastAPI Core Banking System)
-├── .env                # API Keys 
-├── pyproject.toml      # Dependency management
-└── README.md           # Documentation
-```
+FinClarify functions as a decoupled **Client-Server Enterprise Architecture**:
+
+### 1. The Core Banking API (Backend)
+Built on **FastAPI**, this simulates a modern, persistent banking ledger.
+*   **Role:** Handles Authentication, Ledger Management, Historical Logging, and Deterministic Rule Analysis (Math/Duplicates).
+*   **Zero-Trust Logic:** Provides the system of record and ultimate block/allow status for funds.
+
+### 2. The Agentic Swarm (Intelligence Layer)
+Built on **LangGraph**, leveraging **Groq (Llama-3/GPT-OSS)** for real-time inference.
+*   **The Investigator:** Forensic agent that analyzes balance math and transaction history for anomalies.
+*   **The Compliance Manager:** Policy enforcement agent that maps findings to user disability profiles (e.g., *Memory Impairment = Block Duplicates*).
+*   **The Empathy Designer:** Generative agent that creates inclusive assets (Plain English summaries, Audio Scripts, Visual Alert Configuration).
+
+### 3. The Inclusive Client (Frontend)
+Built on **Streamlit**, functioning as a WCAG-compliant web portal.
+*   **Role:** Renders dynamic interfaces based on Agent output, featuring Lottie animations, Waterfall Charts for financial visualization, and auto-play audio guidance.
 
 ---
 
-## 🚀 Installation & Setup
+## ✨ Key Features & Capabilities
+
+| Feature | Accessibility Vector | Implementation Details |
+| :--- | :--- | :--- |
+| **Active Transaction Blocking** | Memory (Alzheimer's) | Physically disables the "Pay" button when exact duplicate transactions are detected, preventing accidental double-payments. |
+| **Dynamic Friction** | Neurodiverse (ADHD) | Introduces review steps (Confirmations) for high-value or late-night transactions to support impulse control. |
+| **Visual Math (No Numbers)** | Dyscalculia / Numeracy | Replaces ledger math with **Waterfall Charts**, visualizing funds "draining" to help users grasp financial impact without calculation. |
+| **Multi-Modal Output** | Visual / Auditory | Simultaneous delivery of High-Contrast Visuals, Lottie Semantic Animations, and Auto-Play TTS Audio logic. |
+| **Plain English Translation** | Cognitive / Dyslexia | Translates complex bank error codes (e.g., `ERR_NSF_404`) into clear warnings like *"Wallet Empty Warning."* |
+
+---
+
+## 🛠️ Technology Stack
+
+*   **Language:** Python 3.9+
+*   **API Framework:** FastAPI, Uvicorn
+*   **Frontend Interface:** Streamlit, Streamlit-Lottie, Plotly
+*   **Agent Orchestration:** LangChain, LangGraph
+*   **LLM Inference:** Groq API (High-performance inference)
+*   **Accessibility Libraries:** gTTS (Google Text-to-Speech)
+*   **Data Models:** Pydantic
+
+---
+
+## 🚀 Installation & Usage Guide
 
 ### Prerequisites
-*   Python 3.9+
-*   An API Key from [Groq](https://console.groq.com)
+*   Python installed on your machine.
+*   A valid **Groq API Key**.
 
-### 1. Clone & Dependencies
-FinClarify manages dependencies using `uv` (or `pip`).
-
+### 1. Environmental Setup
+Clone the repository and install dependencies.
 ```bash
-# Install UV (if not installed) or use standard pip
-pip install fastapi uvicorn requests plotly streamlit langchain-groq langgraph gTTS streamlit-lottie python-dotenv
-
-# OR using uv
 uv add fastapi uvicorn requests plotly streamlit langchain-groq langgraph gTTS streamlit-lottie python-dotenv
 ```
 
-### 2. Environment Config
-Create a `.env` file in the root folder:
-
+Create a `.env` file in the project root:
 ```ini
-GROQ_API_KEY=gsk_your_actual_api_key_here
+GROQ_API_KEY=gsk_your_key_here
 ```
 
----
+### 2. Running the Application
+This application mimics a real-world distributed system. You must run the **Server** and **Client** in separate terminal instances.
 
-## ▶️ Running the Application
-
-FinClarify mimics a real-world environment. You must run the **Banking Core (Server)** and the **User Portal (Client)** simultaneously.
-
-**⚠️ YOU NEED TWO SEPARATE TERMINAL WINDOWS.**
-
-### Terminal 1: The Banking Server
-This runs the core ledger, authentication, and history log.
+**Terminal 1: Core Banking Server**
+Starts the persistent database and API.
 ```bash
-# Run server binding to all interfaces to bypass local proxies
 uv run uvicorn server:app --reload --host 0.0.0.0 --port 8000
 ```
-*Wait until you see: `Uvicorn running on http://0.0.0.0:8000`*
+*> Output should confirm: Uvicorn running on http://0.0.0.0:8000*
 
-### Terminal 2: The User Client
-This runs the interactive application.
+**Terminal 2: User Client Portal**
+Starts the interface.
 ```bash
 uv run streamlit run client.py
 ```
 
 ---
 
-## 🧪 Demo Scenarios (Evaluation Guide)
+## 🧪 Demo Login Credentials
 
-Log in to the portal using these credentials to test specific accessibility guardrails.
+To evaluate specific disability guardrails, please use the following credentials (Password is **123** for all):
 
-### Scenario A: Memory Protection (Preventing Duplicates)
-*   **User:** `bob` | **Pass:** `123`
-*   **Context:** Bob has Memory Impairment.
-*   **Action:** Try to pay **"Electric Co"** exactly **$120.00**.
-*   **Result:** The Agents detect this exists in history. A **RED STOP Banner** appears. The "Confirm" button is physically removed.
-*   **Audio:** *"Stop. You have already paid this bill."*
-
-### Scenario B: Zero-Balance Safety
-*   **User:** `charlie` | **Pass:** `123`
-*   **Context:** Charlie (Dyslexia) struggles with complex numbers.
-*   **Action:** Try to pay **$45.00** (This matches his exact balance).
-*   **Result:** **RED STOP Banner**. "Wallet Empty Warning."
-*   **Innovation:** A **Waterfall Chart** visualizes the balance dropping to zero, aiding cognitive understanding.
-
-### Scenario C: Impulse Control (ADHD)
-*   **User:** `alice` | **Pass:** `123`
-*   **Context:** Alice has ADHD.
-*   **Action:**
-    1. Check the box **"Simulate 2:00 AM"**.
-    2. Try to pay **$150.00**.
-*   **Result:** **ORANGE CAUTION Banner**.
-*   **Behavior:** Positive Friction. The user is asked to verify intent before proceeding, slowing down impulsive actions.
-
-### Scenario D: Admin Interoperability
-*   **User:** `admin` | **Pass:** `admin`
-*   **Action:** View the **System-Wide Ledger**. You will see transactions from Alice or Diana reflected in real-time, proving the backend is persistent and robust.
+| Username | Profile | Test Scenario |
+| :--- | :--- | :--- |
+| **bob** | Memory Impairment | **Duplicate Prevention:** Try to pay "Electric Co" **$120.00** (matches history). Note the red "STOP" block. |
+| **alice** | Neurodiverse (ADHD) | **Impulse Control:** Enable "Simulate 2AM" checkbox. Pay **$150.00**. Note the orange "CAUTION" friction. |
+| **charlie** | Cognitive (Dyslexia) | **Zero Balance Protection:** Try to pay **$45.00** (his exact balance). Note the visual chart and red block. |
+| **diana** | Visual Impairment | **High Value:** Pay **$150.00**. Listen for the automatic Audio Warning description. |
+| **admin** | *pass: admin* | **System View:** Login to view the real-time system ledger verifying transaction integrity. |
 
 ---
 
-## ⚖️ Evaluation Criteria Mapping
+## 🗺️ Future Roadmap
 
-| Criterion | Implementation |
-| :--- | :--- |
-| **Clarity** | Clear distinction between Backend logic and Agentic reasoning. 5 Distinct personas. |
-| **Innovation** | Moving from passive assistance to **Active Agentic Protection** (hard-blocking risky actions). |
-| **Accessibility** | Solution speaks (Audio), shows (Charts/Lottie), and tells (Plain Text). |
-| **Business Impact** | Prevents "friendly fraud," reduces chargeback operational costs, and enables "Vulnerable Customer" compliance. |
-
----
-
-## 🔮 Future Roadmap
-
-*   **Biometric Sentiment Analysis:** Detecting user distress via camera API to trigger automatic support calls.
-*   **Predictive Trends:** Using ML to predict manic spending episodes based on historical velocity, not just static rules.
-*   **Open Banking Plugin:** Porting FinClarify to a Chrome Extension to overlay on top of *any* bank (Chase, Citi, HSBC).
-
----
-
-> Built with ❤️ for the **Access.AI Hackathon**
+1.  **Phase 1: Universal Mobile Accessibility Service:** Deploying FinClarify as an Android/iOS Accessibility Service to overlay protections on third-party apps (Amazon, Uber) without banking integration.
+2.  **Phase 2: Privacy-First Edge Computing:** Migrating from cloud APIs to on-device SLMs (e.g., Phi-3 or Gemma 2B) to process sensitive financial logic entirely offline.
+3.  **Phase 3: The Safe-Input Keyboard:** Developing a custom software keyboard that restricts high-value numeric inputs based on preset safety parameters within any application field.
