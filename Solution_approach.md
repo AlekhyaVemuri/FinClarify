@@ -93,10 +93,8 @@ FinClarify targets specific "Financial Exclusion Vectors" faced by different dis
 
 **Demo**
 
-<video width="640" height="480" controls>
-  <source src="./demo.mp4" type="video/mp4">
-</video>
-
+https://github.com/user-attachments/assets/6526e05a-4298-45dc-b9e2-e2dbdbf760f7
+> **Note**: Audio is disabled in the Demo Video
 
 ---
 
